@@ -17,10 +17,16 @@
             .modal-content {
                 border-radius: 0;
                 min-height: 100vh;
+                display: flex;
+                flex-direction: column;
             }
-            .modal-header, .modal-body, .modal-footer {
-                padding-left: 1rem;
-                padding-right: 1rem;
+            .modal-body {
+                flex: 1 1 auto;
+                overflow-y: auto;
+                max-height: 60vh;
+            }
+            .modal-footer {
+                padding-bottom: env(safe-area-inset-bottom, 1rem);
             }
         }
     </style>
