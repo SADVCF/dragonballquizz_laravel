@@ -2,11 +2,32 @@
 <html>
 <head>
     <title>Dragon Ball Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Importante para móviles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Ajuste para que el modal ocupe casi toda la pantalla en móvil */
+        @media (max-width: 576px) {
+            .modal-dialog {
+                margin: 0;
+                max-width: 100vw;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+            }
+            .modal-content {
+                border-radius: 0;
+                min-height: 100vh;
+            }
+            .modal-header, .modal-body, .modal-footer {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+    </style>
 </head>
 <body class="bg-dark text-light">
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Dragon Ball Quiz</h1>
+        <h1 class="text-center mb-4 fs-2">Dragon Ball Quiz</h1>
         <form id="quizForm" action="/submit" method="POST">
             @csrf
             <input type="hidden" name="answers" id="answersInput">
@@ -25,7 +46,7 @@
             <div id="answersContainer"></div>
           </div>
           <div class="modal-footer">
-            <button type="button" id="nextBtn" class="btn btn-success" disabled>Siguiente</button>
+            <button type="button" id="nextBtn" class="btn btn-success w-100" disabled>Siguiente</button>
           </div>
         </div>
       </div>
