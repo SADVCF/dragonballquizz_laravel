@@ -27,7 +27,7 @@ class QuizController extends Controller
 
     public function quiz()
     {
-        $questions = Question::with('answers')->inRandomOrder()->take(10)->get();
+        $questions = Question::with('answers')->inRandomOrder()->distinct('id')->take(10)->get();
         return view('quiz', compact('questions'));
     }
 
