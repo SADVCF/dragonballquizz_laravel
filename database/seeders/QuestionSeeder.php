@@ -6,6 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Question;
 use App\Models\Answer;
+use Illuminate\Support\Facades\DB;
+
 
 class QuestionSeeder extends Seeder
 {
@@ -14,6 +16,10 @@ class QuestionSeeder extends Seeder
      */
     public function run(): void
     {
+
+            \DB::table('answers')->truncate();
+            \DB::table('questions')->truncate();
+
         $questions = [
             [
                 'text' => '¿Cuál es el verdadero nombre de Goku?',
