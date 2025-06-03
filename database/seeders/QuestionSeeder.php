@@ -17,8 +17,13 @@ class QuestionSeeder extends Seeder
     public function run(): void
     {
 
+            \DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
             \DB::table('answers')->truncate();
             \DB::table('questions')->truncate();
+
+            \DB::statement('SET FOREIGN_KEY_CHECKS=1;'); 
+
 
         $questions = [
             [
